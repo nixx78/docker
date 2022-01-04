@@ -1,32 +1,18 @@
 package lv.nixx.poc.hellodocker;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@RestController
+@ImportResource({"classpath:another_custom.properties", "classpath:custom.properties"})
 public class HelloDockerApplication {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HelloDockerApplication.class);
-
     // https://spring.io/guides/gs/spring-boot-docker/
-    // https://docs.docker.com/compose/gettingstarted/
-
-    // Setup logger && How to check log files ?!
-
-    @RequestMapping("/hello")
-    public String home() {
-        LOG.info("Request from client");
-        return "Hello Docker World:" + System.currentTimeMillis();
-    }
+    // https://medium.com/holisticon-consultants/dont-build-fat-jars-for-docker-applications-6252a5571248
 
     public static void main(String[] args) {
         SpringApplication.run(HelloDockerApplication.class, args);
     }
-
 
 }

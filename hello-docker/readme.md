@@ -5,7 +5,7 @@ _docker build -t nixx/hello-docker ._
 _docker run --name HelloDocker -d -p 8080:8080 nixx/hello-docker_
  - 
  - Run Docker with volume mapper 
-_docker run --name HelloDocker -v /tmp/logs:/logs -d -p 8080:8080 nixx/hello-docker_
+_docker run --name HelloDocker -v c:/tmp/logs:/logs -d -p 8080:8080 nixx/hello-docker_
 
  - Stop Docker:
 _docker stop HelloDocker_
