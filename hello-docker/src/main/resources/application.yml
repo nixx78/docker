@@ -3,3 +3,12 @@ logging:
     name: ./logs/hello-docker.log
   level:
     root: INFO
+
+environment:
+    path: "file:./environment/int/"
+
+spring:
+    config:
+      import:
+          - ${environment.path}/another_custom.properties
+          - ${environment.path}/custom.properties

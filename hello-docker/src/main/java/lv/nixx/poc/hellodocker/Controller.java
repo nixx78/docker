@@ -14,7 +14,7 @@ public class Controller {
     @Value("${custom.value}")
     private int customValue;
 
-    @Value("${another_custom.value}")
+    @Value("${another.custom.value}")
     private String anotherCustomValue;
 
     @RequestMapping("/hello")

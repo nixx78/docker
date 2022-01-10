@@ -2,10 +2,8 @@ package lv.nixx.poc.hellodocker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource({"classpath:another_custom.properties", "classpath:custom.properties"})
 public class HelloDockerApplication {
 
     // https://spring.io/guides/gs/spring-boot-docker/
