@@ -5,10 +5,15 @@ logging:
     root: INFO
 
 environment:
-    path: "file:./environment/int/"
+  path: "file:./environment/int/"
 
 spring:
-    config:
-      import:
-          - ${environment.path}/another_custom.properties
-          - ${environment.path}/custom.properties
+  config:
+    import:
+      - ${environment.path}/another_custom.properties
+      - ${environment.path}/custom.properties
+
+
+server:
+  servlet:
+    context-path: /hello-docker-app
