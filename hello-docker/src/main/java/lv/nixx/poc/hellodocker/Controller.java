@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Controller.class);
+    private static final Logger log = LoggerFactory.getLogger(Controller.class);
 
     @Value("${custom.value}")
     private int customValue;
@@ -19,7 +19,7 @@ public class Controller {
 
     @RequestMapping("/hello")
     public String home() {
-        LOG.info("Request from client");
+        log.info("Request from client");
         return "Hello Docker World:" + System.currentTimeMillis() + ":" + customValue + ":" + anotherCustomValue;
     }
 
