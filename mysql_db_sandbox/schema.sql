@@ -34,11 +34,19 @@ insert into account (customer_id, account_name, account_number) values(2, 'Loan'
 
 #Timestamp will be saved in UTC timezone
 insert into transaction(account_id, amount, date_time, currency) values(1, 10.39, '2023-04-15 11:04:11', 'EUR');
-insert into transaction(account_id, amount, date_time, currency) values(1, 2.10, '2023-04-15 12:00:00', 'USD');
-insert into transaction(account_id, amount, date_time, currency) values(1, 100.39, '2023-04-01 14:04:11', 'EUR');
+insert into transaction(account_id, amount, date_time, currency) values(1, 2.10,  '2023-04-15 12:00:00', 'USD');
+insert into transaction(account_id, amount, date_time, currency) values(1, 3.56,  '2023-04-15 12:00:00', 'EUR');
+
+insert into transaction(account_id, amount, date_time, currency) values(1, 8.69, '2023-04-01 14:04:11', 'EUR');
+insert into transaction(account_id, amount, date_time, currency) values(1, 5.30, '2023-04-01 14:04:11', 'EUR');
 
 insert into transaction(account_id, amount, date_time, currency) values(2, 10.39, '2023-01-01 11:04:11', 'EUR');
-insert into transaction(account_id, amount, date_time, currency) values(2, 2.10, '2023-01-02 12:00:00', 'USD');
+
+insert into transaction(account_id, amount, date_time, currency) values(2,  2.10, '2023-01-02 12:00:00', 'USD');
+
 insert into transaction(account_id, amount, date_time, currency) values(2, 20.15, '2023-01-03 14:04:11', 'EUR');
+insert into transaction(account_id, amount, date_time, currency) values(2, 2.50, '2023-01-03 14:04:11', 'EUR');
+insert into transaction(account_id, amount, date_time, currency) values(2, 50.15, '2023-01-03 14:04:11', 'EUR');
 
 select * from transaction;
+
