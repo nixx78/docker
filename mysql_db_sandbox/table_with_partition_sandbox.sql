@@ -1,7 +1,7 @@
 -- https://dev.mysql.com/doc/mysql-partitioning-excerpt/8.0/en/partitioning-range.html
 -- https://vertabelo.com/blog/everything-you-need-to-know-about-mysql-partitions/
 
-drop table transaction_with_part;
+DROP TABLE IF EXISTS transaction_with_part;
 
 CREATE TABLE IF NOT EXISTS transaction_with_part(
     id INT NOT NULL,

@@ -14,11 +14,18 @@ select * from transaction;
 SELECT GROUP_CONCAT(id) AS ids, DATE(date_time) as TxnDate FROM transaction  GROUP BY TxnDate;
                 
 -- https://dev.mysql.com/blog-archive/mysql-8-0-2-introducing-window-functions/
-select * from 
+-- Получить две саме большие транзакции за каждый день
+SELECT * FROM
 (SELECT id, amount, date_time, ROW_NUMBER()
  OVER (PARTITION BY DATE(date_time) order by amount desc) AS RowNum 
  FROM transaction
 ) as Limited 
 WHERE RowNum < 3
-Order by date_time desc;
+ORDER BY date_time DESC;
 
+-- https://dev.mysql.com/doc/refman/8.0/en/window-functions-usage.html
+-- Получаем статистику транзакций по каждому счету по каждой валюте за каждый день
+SELECT distinct a.account_name, t.account_id, currency, DATE(date_time) as date, 
+SUM(amount) OVER (PARTITION BY account_id, currency) as TotalAmountAccountCurrency, 
+SUM(amount) OVER (PARTITION BY DATE(date_time), currency, account_id) AS SumByDateCurrency
+FROM transaction t JOIN account a ON t.account_id = a.id;
